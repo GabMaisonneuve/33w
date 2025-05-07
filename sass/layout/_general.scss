@@ -1,4 +1,8 @@
 // Description: General styles for the entire application
+* > .container {
+  margin-top: 20px;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -7,9 +11,6 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
-}
-
-* {
 }
 
 body {
