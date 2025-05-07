@@ -173,4 +173,21 @@ body {
   margin-right: auto;
   padding-left: 40px;
   padding-right: 40px;
+}
+
+.carte {
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.carte__image {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 10px;
 }/*# sourceMappingURL=style.css.map */
