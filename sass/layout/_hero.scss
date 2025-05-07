@@ -1,0 +1,24 @@
+.hero {
+  background-image: url("images/acores.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  &__titre {
+  }
+  &__description {
+    font-family: "mont-serrat", sans-serif;
+    font-size: 1.7rem;
+    max-width: 50%;
+  }
+  &__bouton {
+    color: black;
+    background-color: aqua;
+    padding: 4px 10px;
+    max-width: fit-content;
+    border-radius: 6px;
+  }
+}

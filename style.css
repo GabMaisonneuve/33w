@@ -1,0 +1,130 @@
+@charset "UTF-8";
+/*
+Theme Name: club-voyage
+Theme URI: https://referenced.ca
+Author: Eddy Martin
+Author URI: https://github.com/eddytuto
+Description: Thème de base développer dans le cadre du cours de Worpress
+Version: 1.0
+Tested up to: 6.2
+Requires PHP: 7.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: club-voyage
+*/
+/* Importation des feuilles de style du thème */
+/* variables */
+/* Base */
+h1 {
+  font-family: "mont-serrat", sans-serif;
+  font-size: clamp(1.5rem, 5.4795vw - 0.137rem, 5rem);
+}
+
+h2 {
+  font-family: "poppins", sans-serif;
+  /*font-size: clamp(1rem, 1.5656 + 0.5323rem, 2rem);*/
+}
+
+/* Layout */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+.global {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/*  /////////////////////////// Layout .entete */
+.entete {
+  background-color: blanchedalmond;
+}
+.entete__contenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.entete__logo {
+  width: 75px;
+  height: 75px;
+}
+.entete__nav {
+  margin: 0 2rem 0 auto;
+}
+.entete__menu {
+  display: flex;
+  list-style-type: none;
+  gap: 1rem;
+}
+.entete__menu-item a {
+  text-decoration: none;
+  color: inherit;
+  padding: 5px 12px;
+  border-radius: 7px;
+  display: block;
+  background-color: beige;
+}
+.entete__menu-item a:hover {
+  background-color: rgb(211, 211, 195);
+}
+
+.hero {
+  background-image: url("images/acores.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.hero__description {
+  font-family: "mont-serrat", sans-serif;
+  font-size: 1.7rem;
+  max-width: 50%;
+}
+.hero__bouton {
+  color: black;
+  background-color: aqua;
+  padding: 4px 10px;
+  max-width: fit-content;
+  border-radius: 6px;
+}
+
+/* composants */
+/* 
+////////////////////////////////////////Composant .recherche
+*/
+.recherche {
+  display: flex;
+  align-items: center;
+}
+.recherche__input {
+  border: none;
+  outline: none;
+  padding: 8px;
+}
+.container {
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}/*# sourceMappingURL=style.css.map */

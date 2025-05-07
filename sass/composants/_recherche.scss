@@ -1,0 +1,14 @@
+/* 
+////////////////////////////////////////Composant .recherche
+*/
+.recherche {
+  display: flex;
+  align-items: center;
+  &__input {
+    border: none;
+    outline: none;
+    padding: 8px;
+  }
+  &__bouton {
+  }
+}

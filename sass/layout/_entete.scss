@@ -1,0 +1,42 @@
+/*  /////////////////////////// Layout .entete */
+
+.entete {
+  background-color: blanchedalmond;
+  &__contenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    width: 75px;
+    height: 75px;
+  }
+
+  &__nav {
+    margin: 0 2rem 0 auto;
+  }
+
+  &__menu {
+    //ul
+    display: flex;
+    list-style-type: none;
+    gap: 1rem;
+  }
+
+  &__menu-item {
+    //li
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      padding: 5px 12px;
+      border-radius: 7px;
+      display: block;
+      background-color: beige;
+      &:hover {
+        background-color: rgb(211, 211, 195);
+      }
+    }
+  }
+}
