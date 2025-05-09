@@ -57,6 +57,18 @@ body {
 }
 
 /*  /////////////////////////// Layout .entete */
+.chk__menu {
+  display: none;
+}
+
+.chk__menu:checked ~ .entete__nav {
+  display: flex;
+  flex-direction: column;
+}
+.chk__menu:checked ~ .entete__nav .entete__menu {
+  flex-direction: column;
+}
+
 .entete {
   background-color: blanchedalmond;
 }
@@ -70,7 +82,26 @@ body {
   height: 75px;
 }
 .entete__nav {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
   margin: 0 2rem 0 auto;
+}
+@media screen and (max-width: 600px) {
+  .entete__nav {
+    display: none;
+  }
+}
+.entete__burger {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .entete__burger {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }
 .entete__menu {
   display: flex;
@@ -86,7 +117,9 @@ body {
   background-color: beige;
 }
 .entete__menu-item a:hover {
-  background-color: rgb(211, 211, 195);
+  background-color: rgb(136, 136, 99);
+  color: white;
+  transition: all 0.3s ease;
 }
 
 .hero {
