@@ -1,0 +1,24 @@
+.destinations-populaires {
+  padding: 2rem;
+  background-color: #f5f5f5;
+}
+
+.destinations-populaires__destination {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: #ffebcd;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.destinations-populaires__titre {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #2a2a2a;
+}
+
+.destinations-populaires__texte {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
