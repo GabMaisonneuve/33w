@@ -1,0 +1,76 @@
+/*  /////////////////////////// Layout .entete */
+.chk__menu {
+  display: none;
+}
+
+.chk__menu:checked ~ .entete__nav {
+  display: flex;
+  flex-direction: column;
+  .entete__menu {
+    flex-direction: column;
+  }
+}
+
+.custom-logo {
+  width: 75px;
+  height: 75px;
+}
+
+.entete {
+  background-color: #faf2e7;
+  &__contenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    width: 75px;
+    height: 75px;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    margin: 0 2rem 0 auto;
+    @media screen and (max-width: $point-rupture) {
+      display: none;
+    }
+  }
+
+  &__burger {
+    display: none;
+    @media screen and (max-width: $point-rupture) {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  &__menu {
+    //ul
+    display: flex;
+    list-style-type: none;
+    gap: 1rem;
+  }
+
+  &__menu-item {
+    //li
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      padding: 5px 12px;
+      border-radius: 7px;
+      display: block;
+      background-color: beige;
+      &:hover {
+        background-color: rgb(136, 136, 99);
+        color: white;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+}

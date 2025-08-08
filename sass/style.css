@@ -1,0 +1,64 @@
+@charset "UTF-8";
+/*
+Theme Name: club-voyage
+Theme URI: https://referenced.ca
+Author: Eddy Martin
+Author URI: https://github.com/eddytuto
+Description: Thème de base développer dans le cadre du cours de Worpress
+Version: 1.0
+Tested up to: 6.2
+Requires PHP: 7.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: club-voyage
+*/
+/* Importation des feuilles de style du thème */
+/* variables */
+/* Base */
+/* Layout */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+* {
+  border: 1px solid #ccc;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+.global {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* composants */
+/* 
+////////////////////////////////////////Composant .recherche
+*/
+.recherche {
+  border: 1px solid #aaa;
+  display: flex;
+  align-items: center;
+}
+.recherche__input {
+  border: none;
+  outline: none;
+}
+.recherche__bouton {
+  border-left: 1px solid #aaa;
+}/*# sourceMappingURL=style.css.map */

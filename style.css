@@ -1,0 +1,467 @@
+@charset "UTF-8";
+/*
+Theme Name: club-voyage
+Theme URI: https://referenced.ca
+Author: Eddy Martin
+Author URI: https://github.com/eddytuto
+Description: Thème de base développer dans le cadre du cours de Worpress
+Version: 1.0
+Tested up to: 6.2
+Requires PHP: 7.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: club-voyage
+*/
+/* Importation des feuilles de style du thème */
+/* variables */
+/* Base */
+h1 {
+  font-family: "mont-serrat", sans-serif;
+  font-size: clamp(1.5rem, 5.4795vw - 0.137rem, 5rem);
+}
+
+h2 {
+  font-family: "poppins", sans-serif;
+  /*font-size: clamp(1rem, 1.5656 + 0.5323rem, 2rem);*/
+}
+
+/* Layout */
+* > .container {
+  margin-top: 20px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+.global {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.post-categories {
+  display: flex;
+  width: 100%;
+  list-style: none;
+  gap: 15px;
+  justify-content: center;
+}
+
+a {
+  color: rgb(102, 77, 3);
+  background-color: beige;
+  font-weight: 600;
+  display: inline-block;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 7px;
+  transition: background-color 0.3s, color 0.3s;
+}
+a:hover {
+  background-color: rgb(136, 136, 99);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/*  /////////////////////////// Layout .entete */
+.chk__menu {
+  display: none;
+}
+
+.chk__menu:checked ~ .entete__nav {
+  display: flex;
+  flex-direction: column;
+}
+.chk__menu:checked ~ .entete__nav .entete__menu {
+  flex-direction: column;
+}
+
+.custom-logo {
+  width: 75px;
+  height: 75px;
+}
+
+.entete {
+  background-color: #faf2e7;
+}
+.entete__contenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.entete__logo {
+  width: 75px;
+  height: 75px;
+}
+.entete__nav {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  margin: 0 2rem 0 auto;
+}
+@media screen and (max-width: 600px) {
+  .entete__nav {
+    display: none;
+  }
+}
+.entete__burger {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .entete__burger {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+.entete__menu {
+  display: flex;
+  list-style-type: none;
+  gap: 1rem;
+}
+.entete__menu-item a {
+  text-decoration: none;
+  color: inherit;
+  padding: 5px 12px;
+  border-radius: 7px;
+  display: block;
+  background-color: beige;
+}
+.entete__menu-item a:hover {
+  background-color: rgb(136, 136, 99);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.hero__titre {
+  animation: anim-titre 1s 0.5s cubic-bezier(0.08, 0.91, 0.75, 1.54) forwards;
+}
+.hero__description {
+  font-family: "mont-serrat", sans-serif;
+  font-size: 1.7rem;
+  max-width: 50%;
+  font-weight: 500;
+}
+.hero__bouton {
+  color: black;
+  background-color: turquoise;
+  padding: 4px 20px;
+  max-width: fit-content;
+  border-radius: 6px;
+}
+.hero__bouton:hover {
+  background-color: white;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.hero__bouton-blanc {
+  background-color: white;
+  border: 1px solid turquoise;
+  padding: 2px 40px;
+}
+.hero__bouton-blanc:hover {
+  background-color: rgba(99, 232, 255, 0.781);
+  color: rgba(20, 40, 41, 0.699);
+}
+.hero__formulaire {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 4px;
+  max-width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  align-items: flex-end;
+  justify-content: center;
+}
+.hero__formulaire-groupe {
+  display: flex;
+  flex-direction: column;
+  min-width: 250px;
+}
+.hero__formulaire-groupe label {
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+.hero__formulaire-groupe input {
+  padding: 6px 10px;
+  border: 1px solid turquoise;
+  border-radius: 4px;
+}
+@keyframes anim-titre {
+  0% {
+    transform: translateY(-200px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.carrousel {
+  position: absolute;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.carrousel__form {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  z-index: 10;
+}
+
+.piedpage {
+  background-color: #ffebcd;
+  color: #000000;
+  padding: 2rem 1rem;
+  font-family: sans-serif;
+}
+
+.piedpage .global {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.piedpage__ligne-1 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.piedpage__lien nav {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.piedpage__lien nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.piedpage__lien nav ul li a {
+  color: #664d03;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 7px;
+  background-color: beige;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
+}
+
+.piedpage__lien nav ul li a:hover {
+  background-color: rgb(136, 136, 99);
+  color: white;
+}
+
+.piedpage__adresse {
+  max-width: 300px;
+  flex: 1 1 300px;
+}
+
+.piedpage__adresse h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.piedpage__adresse p {
+  margin-bottom: 1rem;
+}
+
+.piedpage__adresse form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.piedpage__adresse input[type=search] {
+  flex-grow: 1;
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.piedpage__adresse button {
+  background-color: #664d03;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.piedpage__adresse button:hover {
+  background-color: rgb(136, 136, 99);
+}
+
+.piedpage__recherche,
+.piedpage__description {
+  flex: 1 1 200px;
+}
+
+.piedpage__ligne-2 {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #664d03;
+}
+
+.piedpage__icone {
+  margin: 0 auto;
+  max-width: 200px;
+}
+
+.destinations-populaires {
+  padding: 2rem;
+  background-color: #f5f5f5;
+}
+
+.destinations-populaires__destination {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: #ffebcd;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.destinations-populaires__titre {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #2a2a2a;
+}
+
+.destinations-populaires__texte {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* composants */
+.conteneur__sociaux {
+  display: flex;
+  flex-direction: row;
+  gap: 0.4rem;
+  border-radius: 0.5rem;
+}
+
+.sociaux {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding: 10px 14px;
+  z-index: 100;
+}
+
+/* 
+////////////////////////////////////////Composant .recherche
+*/
+.recherche {
+  display: flex;
+  align-items: center;
+}
+.recherche__input {
+  border: none;
+  outline: none;
+  padding: 8px;
+}
+
+.container {
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.conteneur {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.conteneur__carte {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1 0 300px;
+  border: 1px solid #aaa;
+  padding: 10px;
+}
+.conteneur__carte__temperature {
+  display: flex;
+}
+.conteneur__carte__description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.conteneur__carte__lien {
+  display: inline-block;
+  background-color: beige;
+  color: #664d03;
+  padding: 6px 14px;
+  border-radius: 7px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  margin-left: 1rem;
+}
+.conteneur__carte__lien:hover {
+  background-color: rgb(136, 136, 99);
+  color: white;
+  transform: translateY(-2px);
+}
+.conteneur__galerie {
+  flex: 1 0 100%;
+}
+
+.grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 10px;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,14 @@
+.conteneur__sociaux {
+  display: flex;
+  flex-direction: row;
+  gap: 0.4rem;
+  border-radius: 0.5rem;
+}
+
+.sociaux {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding: 10px 14px;
+  z-index: 100;
+}
