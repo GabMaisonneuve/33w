@@ -6,13 +6,20 @@
   radios.forEach((radio, index) => {
     radio.addEventListener("change", () => {
       initialise_carrousel();
-      carrousels[index].style.opacity = 1;
+      carrousels[index].classList.add("active");
     });
   });
 
   function initialise_carrousel() {
     carrousels.forEach((carrousel) => {
-      carrousel.style.opacity = 0;
+      carrousel.classList.remove("active");
     });
   }
+
+  let currentIndex = 0;
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % radios.length;
+    radios[currentIndex].checked = true;
+    radios[currentIndex].dispatchEvent(new Event("change"));
+  }, 3000);
 })();

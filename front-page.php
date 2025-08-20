@@ -12,9 +12,9 @@
 
     ?>
     <section class="hero">
-    <div class="carrousel" style="background-image: url('<?= $hero_background[0] ?>'); opacity:1"></div>
-    <div class="carrousel" style="background-image: url('<?= $hero_background[1] ?>'); opacity:0"></div>
-    <div class="carrousel" style="background-image: url('<?= $hero_background[2] ?>'); opacity:0"></div>
+    <div class="carrousel active" style="background-image: url('<?= $hero_background[0] ?>');"></div>
+    <div class="carrousel" style="background-image: url('<?= $hero_background[1] ?>');"></div>
+    <div class="carrousel" style="background-image: url('<?= $hero_background[2] ?>');"></div>
     <form class="carrousel__form">
     <input type="radio" class="carrousel__radio" name="carrousel__radio" value="0" checked>
     <input type="radio" class="carrousel__radio" name="carrousel__radio" value="1">

@@ -232,6 +232,13 @@ a:hover {
   height: 100%;
   top: 0;
   left: 0;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+.carrousel.active {
+  opacity: 1;
+  z-index: -1;
 }
 .carrousel__form {
   position: absolute;
@@ -466,6 +473,9 @@ a:hover {
   gap: 10px;
 }
 
+.accordeon {
+  padding: 1rem;
+}
 .accordeon__chk {
   display: none;
 }
@@ -474,8 +484,58 @@ a:hover {
   overflow: hidden;
 }
 
+.accordeon__excerpt {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+  padding: 0 1rem;
+}
+
 .accordeon__chk:checked ~ .accordeon__excerpt {
-  max-height: 200px;
+  max-height: 1000px;
+}
+
+.list_categories {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1.5rem;
+  flex-wrap: wrap;
+}
+.list_categories li {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  list-style: none;
+  padding: 0.5rem 2rem;
+}
+.list_categories li:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.destination__list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 2rem;
+}
+.destination__list > div {
+  flex: 1 1 calc(33.333% - 20px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 1rem;
+  background-color: #fff;
+  transition: transform 0.3s;
+}
+.destination__list > div:hover {
+  transform: translateY(-5px);
+}
+
+.destination__titre {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 /* input type="checkbox" *//*# sourceMappingURL=style.css.map */
