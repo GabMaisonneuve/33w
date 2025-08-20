@@ -464,4 +464,18 @@ a:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 10px;
-}/*# sourceMappingURL=style.css.map */
+}
+
+.accordeon__chk {
+  display: none;
+}
+.accordeon__excerpt {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.accordeon__chk:checked ~ .accordeon__excerpt {
+  max-height: 200px;
+}
+
+/* input type="checkbox" *//*# sourceMappingURL=style.css.map */

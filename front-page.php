@@ -1,7 +1,7 @@
 <?php 
 /**
  * Le modele front-page.php 
- * 
+ * Permet d'afficher la page d'accueil
  */
 ?>
     <?php get_header(); ?>
@@ -32,6 +32,7 @@
   </section>
 
   <section class="destination">
+    <?php extraire_list_categories("destination"); ?>
     <h2 class="destination__titre">Articles de la categorie</h2>
     <div class="destination__list"></div>
   </section>

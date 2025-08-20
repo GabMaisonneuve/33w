@@ -42,4 +42,22 @@ function vague($couleur_haut, $couleur_bas)
         </path>
     </svg>
 
-<?php } ?>
+<?php } 
+
+function extraire_list_categories($nom_categorie)
+{
+    //$parent_category_id = get_term_by("slug", $nom_categorie, "category");
+    $parent_category = get_category_by_slug($nom_categorie);
+    $tableau = array(
+        'parent' => $parent_category->term_id,
+        'hide_empty' => true
+    );
+    $list_categories = get_categories($tableau);
+    echo "<ul class='list_categories'>";
+    foreach ($list_categories as $categorie) {
+        echo "<li data-id='" . $categorie->term_id . "'>" . $categorie->name . "</li>";
+    }
+    echo "</ul>";
+}
+
+?>
