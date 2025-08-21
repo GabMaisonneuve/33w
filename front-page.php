@@ -1,14 +1,7 @@
-<?php 
-/**
- * Le modèle front-page.php 
- * Permet d'afficher la page d'accueil
- */
-?>
-
 <?php get_header(); ?>
 
 <?php
-// Récupérer le nombre d’images défini dans le customizer (par défaut 3)
+// Récupérer le nombre d’images définies dans le customizer (par défaut 3)
 $nb_images = get_theme_mod('hero_nb_images', 3);
 $hero_backgrounds = [];
 
@@ -21,6 +14,7 @@ for ($i = 0; $i < $nb_images; $i++) {
 }
 ?>
 
+<!-- Hero Section -->
 <section class="hero">
   <?php foreach ($hero_backgrounds as $index => $background): ?>
     <div 
@@ -44,14 +38,21 @@ for ($i = 0; $i < $nb_images; $i++) {
   <?php get_template_part("gabarit/hero"); ?>
 </section>
 
+<?php petite_vague('#966e49', 40); ?>
+
+<!-- Populaire Section -->
 <section class="populaire">
   <?php afficher_cartes_categorie("populaire"); ?>
 </section>
 
+<?php petite_vague( '#966e49',40); ?>
+
+<!-- Destination Section -->
 <section class="destination">
   <?php extraire_list_categories("destination"); ?>
   <h2 class="destination__titre">Articles de la categorie</h2>
   <div class="destination__list"></div>
 </section>
+
 
 <?php get_footer(); ?>

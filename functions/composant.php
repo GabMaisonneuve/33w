@@ -44,12 +44,12 @@ function vague($couleur_haut, $couleur_bas)
 
 <?php } 
 
-function petite_vague($couleur_haut = '#fff', $couleur_bas = '#faf2e7', $height = 40) { ?>
+function petite_vague($couleur_bas = '#966e49', $height = 40) { ?>
     <svg class="petite-vague" xmlns="http://www.w3.org/2000/svg" 
          viewBox="0 0 1440 100" preserveAspectRatio="none" 
          style="width:100%; height: <?= $height ?>px;">
         <path fill="<?= esc_attr($couleur_bas) ?>" 
-              d="M0,10L80,20C160,30,320,50,480,45C640,40,800,20,960,15C1120,10,1280,25,1360,35L1440,40L1440,100L0,100Z">
+              d="M0,20L80,35C160,50,320,70,480,60C640,50,800,30,960,35C1120,40,1280,60,1360,70L1440,80L1440,100L0,100Z">
         </path>
     </svg>
 <?php }
