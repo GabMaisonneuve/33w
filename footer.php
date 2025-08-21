@@ -1,41 +1,46 @@
 <?php
 $footer_couleur = "#faf2e7";
-vague("#85a2b0", $footer_couleur); ?>
-<footer class="piedpage" style="background-color: <?= $footer_couleur ?> ;">
-    <div class="global">
-        <section class="piedpage__ligne-1">
-            <div class="piedpage__lien">
-                <?php wp_nav_menu(array(
-                    "menu" => "externe",
-                    "container" => "nav"
-                )) ?>
-            </div>
-            <div class="piedpage__adresse">
-                <h2>Adresse et recherche</h2>
-                <p>adresse</p>
-                <?php get_search_form() ?>
-            </div>
+vague("#966e49", $footer_couleur);
+?>
 
-            <div class="piedpage__recherche"></div>
-            <div class="piedpage__description"></div>
-        </section>
-        <section class="piedpage__ligne-2">
-            <div class="piedpage__icone">
-                <?php icone_sociaux('#f00') ?>
-            </div>
-        </section>
+<footer class="footer" style="background-color: <?= $footer_couleur ?>;">
+  <div class="container">
 
-    </div>
+ 
+    <section class="footer__top">
 
+      <nav class="footer__menu">
+        <?php wp_nav_menu(array(
+          "menu" => "externe",
+          "container" => false,
+          "menu_class" => "footer__nav"
+        )); ?>
+      </nav>
+
+
+      <div class="footer__info">
+        <h2 class="footer__title">Adresse et recherche</h2>
+        <p class="footer__adresse">356 Hamel, Québec, QC</p>
+        <div class="footer__search">
+          <?php get_search_form(); ?>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom row -->
+    <section class="footer__bottom">
+      <div class="footer__socials">
+        <?php icone_sociaux('#333') ?>
+      </div>
+      <p class="footer__copy">&copy; <?= date("Y") ?> - Tous droits réservés.</p>
+    </section>
+    
+  </div>
 </footer>
-<script src="script/checkbox.js"></script>
 
-</body>
 <?php wp_footer(); ?>
-
+</body>
 </html>
-
-
 
 
 

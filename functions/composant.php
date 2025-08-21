@@ -34,15 +34,25 @@ function vague($couleur_haut, $couleur_bas)
         }
     </style>
 
-    <svg class="style-vague" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path
-            fill="<?= $couleur_bas ?>"
-            fill-opacity="1"
-            d="M0,32L80,58.7C160,85,320,139,480,133.3C640,128,800,64,960,53.3C1120,43,1280,85,1360,106.7L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z">
-        </path>
-    </svg>
+  <svg class="style-vague" xmlns="http://www.w3.org/2000/svg" 
+     viewBox="0 0 1440 100" preserveAspectRatio="none">
+  <path fill="<?= $couleur_bas ?>" 
+        d="M0,15L80,30C160,45,320,70,480,65C640,60,800,30,960,25C1120,20,1280,45,1360,60L1440,75L1440,100L0,100Z">
+  </path>
+</svg>
+
 
 <?php } 
+
+function petite_vague($couleur_haut = '#fff', $couleur_bas = '#faf2e7', $height = 40) { ?>
+    <svg class="petite-vague" xmlns="http://www.w3.org/2000/svg" 
+         viewBox="0 0 1440 100" preserveAspectRatio="none" 
+         style="width:100%; height: <?= $height ?>px;">
+        <path fill="<?= esc_attr($couleur_bas) ?>" 
+              d="M0,10L80,20C160,30,320,50,480,45C640,40,800,20,960,15C1120,10,1280,25,1360,35L1440,40L1440,100L0,100Z">
+        </path>
+    </svg>
+<?php }
 
 function extraire_list_categories($nom_categorie)
 {
@@ -75,6 +85,8 @@ function afficher_cartes_categorie($categorie_id = 'populaire') {
     $galerie_cat = get_category_by_slug('galerie');
     $galerie_id = ($galerie_cat && is_object($galerie_cat)) ? $galerie_cat->term_id : 0;
 
+    $default_image = get_template_directory_uri() . '/assets/images/default.jpg'; // 👈 Default image path
+
     $args = array(
         'cat' => intval($categorie_id),
         'posts_per_page' => 10,
@@ -100,9 +112,19 @@ function afficher_cartes_categorie($categorie_id = 'populaire') {
                 }
             }
 
+            // Check if the post has a featured image
+            if (has_post_thumbnail()) {
+                $image_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
+            } else {
+                $image_url = $default_image; // Use default if no featured image
+            }
+
+            // Pass the image URL to your template
             if ($exclude_galerie) {
+                set_query_var('custom_image_url', $image_url);
                 get_template_part('gabarit/carte');
             } else {
+                set_query_var('custom_image_url', $image_url);
                 get_template_part('gabarit/galerie');
             }
         }
