@@ -252,6 +252,17 @@ a:hover {
   z-index: 10;
 }
 
+.hero__contenu {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.hero__contenu.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .piedpage {
   background-color: #ffebcd;
   color: #000000;
@@ -465,6 +476,10 @@ a:hover {
 }
 .conteneur__galerie {
   flex: 1 0 100%;
+}
+
+.categorie-item {
+  list-style: none;
 }
 
 .grille {

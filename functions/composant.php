@@ -60,4 +60,58 @@ function extraire_list_categories($nom_categorie)
     echo "</ul>";
 }
 
-?>
+
+function afficher_cartes_categorie($categorie_id = 'populaire') {
+
+    if (!is_numeric($categorie_id)) {
+        $categorie = get_category_by_slug($categorie_id);
+        if (!$categorie) {
+            echo '<p>Aucune catégorie trouvée</p>';
+            return;
+        }
+        $categorie_id = $categorie->term_id;
+    }
+
+    $galerie_cat = get_category_by_slug('galerie');
+    $galerie_id = ($galerie_cat && is_object($galerie_cat)) ? $galerie_cat->term_id : 0;
+
+    $args = array(
+        'cat' => intval($categorie_id),
+        'posts_per_page' => 10,
+        'post_status' => 'publish'
+    );
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) {
+        echo '<section class="destinations-populaires populaire">';
+        echo '<div class="conteneur global">';
+       
+        while ($query->have_posts()) {
+            $query->the_post();
+
+            $categories = get_the_category();
+            $exclude_galerie = true;
+           
+            foreach ($categories as $cat) {
+                if ($cat->term_id === $galerie_id) {
+                    $exclude_galerie = false;
+                    break;
+                }
+            }
+
+            if ($exclude_galerie) {
+                get_template_part('gabarit/carte');
+            } else {
+                get_template_part('gabarit/galerie');
+            }
+        }
+
+        echo '</div>';
+        echo '</section>';
+       
+        wp_reset_postdata();
+    } else {
+        echo '<p>Aucun article trouvé dans cette catégorie</p>';
+    }
+}

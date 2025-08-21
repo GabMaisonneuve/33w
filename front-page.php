@@ -1,40 +1,57 @@
 <?php 
 /**
- * Le modele front-page.php 
+ * Le modèle front-page.php 
  * Permet d'afficher la page d'accueil
  */
 ?>
-    <?php get_header(); ?>
-    <?php
-    $hero_background[0] = get_theme_mod("hero_background_0");
-    $hero_background[1] = get_theme_mod("hero_background_1");
-    $hero_background[2] = get_theme_mod("hero_background_2");
 
-    ?>
-    <section class="hero">
-    <div class="carrousel active" style="background-image: url('<?= $hero_background[0] ?>');"></div>
-    <div class="carrousel" style="background-image: url('<?= $hero_background[1] ?>');"></div>
-    <div class="carrousel" style="background-image: url('<?= $hero_background[2] ?>');"></div>
-    <form class="carrousel__form">
-    <input type="radio" class="carrousel__radio" name="carrousel__radio" value="0" checked>
-    <input type="radio" class="carrousel__radio" name="carrousel__radio" value="1">
-    <input type="radio" class="carrousel__radio" name="carrousel__radio" value="2">
-    </form>
+<?php get_header(); ?>
 
+<?php
+// Récupérer le nombre d’images défini dans le customizer (par défaut 3)
+$nb_images = get_theme_mod('hero_nb_images', 3);
+$hero_backgrounds = [];
 
+// Charger les backgrounds définis
+for ($i = 0; $i < $nb_images; $i++) {
+    $bg = get_theme_mod("hero_background_$i");
+    if ($bg) {
+        $hero_backgrounds[] = $bg;
+    }
+}
+?>
 
-    <?php get_template_part("gabarit/hero") ?>
-    </section>
+<section class="hero">
+  <?php foreach ($hero_backgrounds as $index => $background): ?>
+    <div 
+      class="carrousel <?= $index === 0 ? 'active' : '' ?>" 
+      style="background-image: url('<?= esc_url($background) ?>');">
+    </div>
+  <?php endforeach; ?>
 
+  <form class="carrousel__form">
+    <?php foreach ($hero_backgrounds as $i => $bg): ?>
+      <input 
+        type="radio" 
+        class="carrousel__radio" 
+        name="carrousel__radio" 
+        value="<?= $i ?>" 
+        <?= $i === 0 ? 'checked' : '' ?>
+      >
+    <?php endforeach; ?>
+  </form>
 
-    <section class="populaire">
-  <?php get_template_part("gabarit/populaire")  ?>
-  </section>
+  <?php get_template_part("gabarit/hero"); ?>
+</section>
 
-  <section class="destination">
-    <?php extraire_list_categories("destination"); ?>
-    <h2 class="destination__titre">Articles de la categorie</h2>
-    <div class="destination__list"></div>
-  </section>
-    
-    <?php get_footer();
+<section class="populaire">
+  <?php afficher_cartes_categorie("populaire"); ?>
+</section>
+
+<section class="destination">
+  <?php extraire_list_categories("destination"); ?>
+  <h2 class="destination__titre">Articles de la categorie</h2>
+  <div class="destination__list"></div>
+</section>
+
+<?php get_footer(); ?>
