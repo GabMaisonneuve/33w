@@ -137,3 +137,8 @@ function afficher_cartes_categorie($categorie_id = 'populaire') {
         echo '<p>Aucun article trouvé dans cette catégorie</p>';
     }
 }
+
+function club_voyage_register_menus() {
+    register_nav_menu('menu_404', __('Menu 404', 'theme-textdomain'));
+}
+add_action('after_setup_theme', 'club_voyage_register_menus');
