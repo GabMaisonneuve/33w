@@ -30,18 +30,6 @@ function club_voyage_customize_register($wp_customize) {
         'type'    => 'text',
     ));
 
-    // Message
-    $wp_customize->add_setting('section_404_message', array(
-        'default' => "Oops, vous avez échoué sur l'île 404 !",
-        'transport' => 'refresh',
-        'sanitize_callback' => 'sanitize_text_field',
-    ));
-    $wp_customize->add_control('section_404_message_control', array(
-        'label'   => __('Message', 'theme-textdomain'),
-        'section' => 'section_404',
-        'type'    => 'textarea',
-    ));
-
     // Ajouter un setting pour le texte d'erreur
     $wp_customize->add_setting('erreur404_texte', array(
         'default' => "Pas de panique, cher membre explorateur ! Vous avez dérivé un peu trop loin des destinations de rêve que notre club a soigneusement sélectionnées pour vous. Reprenez votre périple en cliquant sur 'Accueil' pour découvrir à nouveau nos voyages d’exception !",

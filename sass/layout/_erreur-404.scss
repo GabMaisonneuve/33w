@@ -1,0 +1,172 @@
+.erreur-404 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+
+  &__contenu {
+    max-width: 800px;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.3); // si tu veux overlay
+  }
+
+  &__titre {
+    font-size: 3rem;
+    color: #ffc107;
+    margin-bottom: 1rem;
+  }
+
+  &__message {
+    font-size: 1.5rem;
+    color: #ffc107;
+    margin-bottom: 1rem;
+  }
+
+  &__texte {
+    font-size: 1rem;
+    color: #ffc107;
+    margin-bottom: 2rem;
+  }
+
+  &__btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    color: #88b9d3;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+  }
+
+  &__menu-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+
+    li {
+      list-style: none;
+    }
+
+    a {
+      display: block;
+      padding: 0.5rem 1rem;
+      background-color: #ffcc00;
+      color: #000;
+      text-decoration: none;
+      border-radius: 3px;
+    }
+  }
+
+  &__search-custom {
+    margin: 2rem 0;
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .recherche-404-form {
+      position: relative;
+      width: 100%;
+      display: flex;
+      align-items: flex-end;
+      gap: 0;
+    }
+
+    .recherche-404-input {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid #ffd700;
+      padding: 12px 0;
+      font-size: 1.1rem;
+      color: #ffd700;
+      outline: none;
+      font-family: inherit;
+      flex: 1;
+
+      &::placeholder {
+        color: #ffd700;
+        opacity: 1;
+        font-style: italic;
+      }
+
+      &::-webkit-input-placeholder {
+        color: #ffd700;
+        opacity: 1;
+        font-style: italic;
+      }
+
+      &::-moz-placeholder {
+        color: #ffd700;
+        opacity: 1;
+        font-style: italic;
+      }
+
+      &:-ms-input-placeholder {
+        color: #ffd700;
+        opacity: 1;
+        font-style: italic;
+      }
+
+      &:focus {
+        border-bottom-color: #ffed4a;
+
+        &::placeholder {
+          color: #ffed4a;
+        }
+      }
+    }
+
+    .recherche-404-submit {
+      display: none;
+    }
+  }
+
+  // Media queries INSIDE the parent selector
+  @media (max-width: 768px) {
+    &__titre {
+      font-size: 2.5rem;
+    }
+    &__message {
+      font-size: 1.2rem;
+    }
+    &__texte {
+      font-size: 0.9rem;
+    }
+    &__btn {
+      padding: 0.7rem 1.2rem;
+    }
+
+    &__search-custom {
+      .recherche-404-input {
+        font-size: 1rem;
+        padding: 10px 0;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    &__titre {
+      font-size: 2rem;
+    }
+    &__message {
+      font-size: 1rem;
+    }
+    &__texte {
+      font-size: 0.8rem;
+    }
+    &__btn {
+      padding: 0.6rem 1rem;
+    }
+
+    &__search-custom {
+      .recherche-404-input {
+        font-size: 0.9rem;
+        padding: 8px 0;
+      }
+    }
+  }
+}

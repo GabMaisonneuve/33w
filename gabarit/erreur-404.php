@@ -9,23 +9,23 @@
   <div class="erreur-404__contenu">
 
     <h1 class="erreur-404__titre">
-      <?php echo get_theme_mod('section_404_titre', 'Erreur 404'); ?>
+      <?php echo get_theme_mod('section_404_titre', "Oops, vous avez échoué sur l'île 404 !"); ?>
     </h1>
-
-    <h2 class="erreur-404__message">
-      <?php echo get_theme_mod('section_404_message', "Oops, vous avez échoué sur l'île 404 !"); ?>
-    </h2>
 
     <p class="erreur-404__texte">
         <?php echo get_theme_mod('erreur404_texte', "Pas de panique, cher membre explorateur ! Vous avez dérivé un peu trop loin des destinations de rêve que notre club a soigneusement sélectionnées pour vous. Reprenez votre périple en cliquant sur 'Accueil' pour découvrir à nouveau nos voyages d’exception !"); ?>
     </p>
 
     <!-- Zone de recherche -->
-    <div class="erreur-404__search">
-      <?php get_search_form(); ?>
-    </div>
+ 
 
     <!-- Menu personnalisé pour 404 -->
+    
+    <!-- Bouton retour accueil -->
+    <a href="<?php echo home_url(); ?>" class="erreur-404__btn" style="background-color: <?php echo get_theme_mod('section_404_couleur_btn', '#ffe217'); ?>;">
+        Retour à l’accueil
+    </a>
+    
     <nav class="erreur-404__menu">
       <?php
         wp_nav_menu(array(
@@ -37,10 +37,16 @@
       ?>
     </nav>
 
-    <!-- Bouton retour accueil -->
-    <a href="<?php echo home_url(); ?>" class="erreur-404__btn" style="background-color: <?php echo get_theme_mod('section_404_couleur_btn', '#ff6600'); ?>;">
-      Retour à l’accueil
-    </a>
-
+       <div class="erreur-404__search-custom">
+        <form role="search" method="get" class="recherche-404-form" action="<?php echo esc_url(home_url('/')); ?>">
+            <input type="search" 
+                   class="recherche-404-input" 
+                   placeholder="Rechercher..." 
+                   value="<?php echo get_search_query(); ?>" 
+                   name="s" 
+                   autocomplete="off" />
+            <input type="submit" class="recherche-404-submit" value="Rechercher" />
+        </form>
+    </div>
   </div>
 </section>
